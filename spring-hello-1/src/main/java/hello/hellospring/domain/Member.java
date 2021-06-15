@@ -1,9 +1,21 @@
 package hello.hellospring.domain;
 
-public class Member {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class Member {
+	
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) // id++ 자동생성
 	private Long id;
+	
+	
 	private String name;
+	
+	
 	public Long getId() {
 		return id;
 	}

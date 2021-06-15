@@ -30,15 +30,14 @@ public class MemberServiceTestintgrationTest {
 	
 
 	@Test
-	void testJoin()  {
+	void 회원가입()  {
 //		given
 		Member member = new Member();
-		member.setName("spring");
+		member.setName("spring555");
 //		when
 		Long saveId = memberService.join(member);
-		System.out.println(saveId);
+//		System.out.println(saveId);
 		
-//		System.out.println(memberService.findMembers());
 //		then
 		Member findMember = memberService.findOne(saveId).get();
 		assertThat(member.getName()).isEqualTo(findMember.getName());

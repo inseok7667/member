@@ -24,6 +24,7 @@ public class MemberController {
 	
 	@GetMapping("/members/new")
 	public String createForm() {
+		System.out.println("createForm() 실행");
 		return "members/createMembersForm";
 	}
 	
