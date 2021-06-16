@@ -32,17 +32,12 @@ public class MemberService {
 //		result.orElseGet(null) 값이 있으면 꺼내라 ~
 		
 		memberRepository.save(member);  // 저장
-		System.out.println("join실행");
+
 		return member.getId();
 
 	}
 
-	private void validateDuplicateMember(Member member) {
-		System.out.println("예외처리 실행");
-		memberRepository.findbyName(member.getName()).ifPresent(m -> {
-			throw new IllegalStateException("이미 존재하는 회원입니다.");
-		});
-	}
+	
 	
 	public List<Member> findMembers() {
 		System.out.println("findMembers 실행");
@@ -55,6 +50,12 @@ public class MemberService {
 	}
 
 	
+	private void validateDuplicateMember(Member member) {
+		System.out.println("예외처리 실행");
+		memberRepository.findbyName(member.getName()).ifPresent(m -> {
+			throw new IllegalStateException("이미 존재하는 회원입니다.");
+		});
+	}
 	
 	
 }

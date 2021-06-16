@@ -1,19 +1,22 @@
 package hello.hellospring.domain;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity    //jpa가 관리하는 entity , 기본값은 클래스명
 public class Member {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) // id++ 자동생성
 	private Long id;
 	
-	
 	private String name;
+	
+	private Date date;
 	
 	
 	public Long getId() {
@@ -28,5 +31,13 @@ public class Member {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
+	
 	
 }
